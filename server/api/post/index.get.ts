@@ -8,7 +8,7 @@ export default defineEventHandler(async (event) => {
     }
 
     const queries = getQuery(event);
-    const limit = Number(queries.limit);
+    const limit = Math.min(100, Number(queries.limit));
     const skip = Number(queries.skip);
 
     return await PostModel.find(

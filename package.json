@@ -1,0 +1,21 @@
+{
+  "name": "nuxt-app",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare"
+  },
+  "dependencies": {
+    "@atproto/api": "^0.13.5",
+    "@nuxtjs/tailwindcss": "^6.12.1",
+    "@types/jsonwebtoken": "^9.0.6",
+    "jsonwebtoken": "^9.0.2",
+    "nuxt": "^3.13.0",
+    "nuxt-mongoose": "^1.0.6",
+    "vue": "latest"
+  }
+}

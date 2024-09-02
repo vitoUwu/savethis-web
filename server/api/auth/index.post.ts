@@ -3,10 +3,6 @@ import jwt from "jsonwebtoken";
 
 export default defineEventHandler(async (event) => {
   try {
-    const client = new AtpAgent({
-      service: "https://bsky.social",
-    });
-
     const body = await readBody(event);
     const handle = body.handle;
     const password = body.password;
@@ -21,6 +17,10 @@ export default defineEventHandler(async (event) => {
         status: 400,
       });
     }
+
+    const client = new AtpAgent({
+      service: "https://bsky.social",
+    });
 
     const session = await client.login({
       identifier: handle,

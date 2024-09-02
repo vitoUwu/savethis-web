@@ -2,7 +2,6 @@ import { AtpAgent } from "@atproto/api";
 import jwt from "jsonwebtoken";
 
 export default defineEventHandler(async (event) => {
-  console.log(process.env.JWT_SECRET);
   try {
     const client = new AtpAgent({
       service: "https://bsky.social",

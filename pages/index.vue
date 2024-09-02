@@ -57,7 +57,7 @@ function handlePostDelete(key: string) {
 <template>
   <Header />
   <main
-    class="bg-stone-950 w-full h-screen flex overflow-y-auto py-10 items-center flex-col text-white px-3"
+    class="bg-stone-950 w-full flex py-10 items-center flex-col text-white px-3"
   >
     <div
       :class="{

@@ -1,0 +1,54 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    --color: theme(colors.base);
+    --border: theme(colors.base-muted);
+    --content: theme(colors.base-content);
+    --ring: theme(colors.base);
+  }
+
+  html {
+    @apply bg-base text-primary-content;
+  }
+
+  body {
+    @apply min-h-screen;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply h-10 px-3 rounded-md flex items-center justify-center font-medium bg-[--color] text-[--content] text-sm hover:scale-105 active:scale-95 transition-all;
+  }
+
+  .btn-primary {
+    @apply [--color:theme(colors.primary)] [--border:theme(colors.primary)] [--content:theme(colors.primary-content)];
+  }
+
+  .btn-danger {
+    @apply [--color:theme(colors.danger)] [--border:theme(colors.danger)] [--content:theme(colors.danger-content)];
+  }
+
+  .btn-square {
+    @apply h-10 w-10 overflow-clip;
+  }
+
+  .btn-ghost {
+    @apply border-none bg-transparent text-[--color];
+  }
+
+  .btn-outline {
+    @apply border-2 border-[--border] [--color:theme(colors.transparent)];
+  }
+
+  .input {
+    @apply w-full px-3 h-10 rounded-md bg-transparent text-sm border-2 border-[--border] ring-2 transition-all ring-[--ring] ring-offset-[3px] outline-none ring-offset-base placeholder:text-[--base-muted] placeholder:font-medium;
+  }
+
+  .input-primary {
+    @apply [--color:theme(colors.transparent)] [--border:theme(colors.primary)] [--ring:theme(colors.transparent)] focus:[--ring:theme(colors.primary)] [--base-muted:theme(colors.base-muted)];
+  }
+}

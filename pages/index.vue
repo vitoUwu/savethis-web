@@ -56,9 +56,7 @@ function handlePostDelete(key: string) {
 
 <template>
   <Header />
-  <main
-    class="bg-stone-950 w-full flex py-10 items-center flex-col text-white px-3"
-  >
+  <main class="w-full flex py-10 items-center flex-col px-3">
     <div
       :class="{
         'opacity-100 pointer-events-auto': status === 'pending',
@@ -99,9 +97,7 @@ function handlePostDelete(key: string) {
       ></Script>
     </template>
     <template v-else-if="status === 'success'">
-      <div class="flex flex-col items-center justify-center">
-        <div class="text-2xl">No posts found</div>
-      </div>
+      <PostsEmptyState />
     </template>
   </main>
 </template>
@@ -110,5 +106,21 @@ function handlePostDelete(key: string) {
 .bluesky-embed {
   background-color: #292524;
   border-radius: 4px;
+}
+
+.list-move,
+.list-enter-active,
+.list-leave-active {
+  transition: all 0.5s cubic-bezier(0.55, 0, 0.1, 1);
+}
+
+.list-enter-from,
+.list-leave-to {
+  opacity: 0;
+  transform: scaleY(0.01) translate(30px, 0);
+}
+
+.list-leave-active {
+  position: absolute;
 }
 </style>

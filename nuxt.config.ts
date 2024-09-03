@@ -1,6 +1,10 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  compatibilityDate: '2024-04-03',
+  compatibilityDate: "2024-04-03",
   devtools: { enabled: true },
-  modules: ['@nuxtjs/tailwindcss', 'nuxt-mongoose']
-})
+  modules: ["@nuxtjs/tailwindcss", "nuxt-mongoose"],
+  tailwindcss: {
+    cssPath: "~/assets/css/tailwind.css",
+    configPath: "./tailwind.config.ts",
+  },
+});

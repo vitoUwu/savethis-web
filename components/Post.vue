@@ -44,13 +44,15 @@ async function deletePost(key: string) {
       :data-bluesky-cid="post.cid"
     />
     <div class="flex w-full items-center justify-end">
-      <button
+      <Button
         @click="deletePost(post.postKey)"
         :disabled="isDeleting"
-        class="h-10 w-10 rounded-xl flex items-center justify-center font-medium hover:bg-red-500 border-2 hover:scale-110 border-red-500 transition-all md:absolute md:-right-11 md:top-2"
+        class="md:absolute md:-right-11 md:top-2"
+        variant="danger"
+        square
       >
         <IconsBookmarkRemove :size="18" />
-      </button>
+      </Button>
     </div>
   </div>
 </template>
